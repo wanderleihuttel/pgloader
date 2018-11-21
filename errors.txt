@@ -1,0 +1,20 @@
+root@debian:/usr/src/migration# pgloader -v /tmp/pgloader/teste.load
+2018-11-21T00:09:16.051000Z NOTICE Starting pgloader, log system is ready.
+2018-11-21T00:09:16.088000Z LOG Main logs in '/tmp/pgloader/pgloader.log'
+2018-11-21T00:09:16.112000Z LOG Data errors in '/tmp/pgloader/'
+2018-11-21T00:09:16.113000Z LOG Parsing commands from file #P"/tmp/pgloader/teste.load"
+2018-11-21T00:09:16.721000Z NOTICE DROP then CREATE TABLES
+2018-11-21T00:09:16.922000Z WARNING Source column "public"."Client"."clientid" is casted to type "bigserial" which is not the same as "integer", the type of current target database column "public"."client"."clientid".
+2018-11-21T00:09:16.923000Z WARNING Source column "public"."Client"."name" is casted to type "bytea" which is not the same as "text", the type of current target database column "public"."client"."name".
+2018-11-21T00:09:16.923000Z WARNING Source column "public"."Client"."uname" is casted to type "bytea" which is not the same as "text", the type of current target database column "public"."client"."uname".
+2018-11-21T00:09:16.924000Z WARNING Source column "public"."Client"."fileretention" is casted to type "numeric" which is not the same as "bigint", the type of current target database column "public"."client"."fileretention".
+2018-11-21T00:09:16.924000Z WARNING Source column "public"."Client"."jobretention" is casted to type "numeric" which is not the same as "bigint", the type of current target database column "public"."client"."jobretention".
+2018-11-21T00:09:16.925000Z NOTICE ALTER TABLE public.client DROP CONSTRAINT IF EXISTS client_pkey;
+2018-11-21T00:09:16.926000Z ERROR Database error 42501: deve ser o dono da rela??o client
+QUERY: ALTER TABLE public.client DROP CONSTRAINT IF EXISTS client_pkey;
+2018-11-21T00:09:16.926000Z FATAL Failed to create the schema, see above.
+       table name       read   imported     errors      total time       read      write
+-----------------  ---------  ---------  ---------  --------------  ---------  ---------
+  fetch meta data          3          3          0          0.434s
+     Drop Indexes          0          0          0          0.000s
+-----------------  ---------  ---------  ---------  --------------  ---------  ---------
