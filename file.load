@@ -1,0 +1,10 @@
+LOAD DATABASE
+     FROM      mysql://bacula:bacula@localhost:3306/bacula
+     INTO postgresql://bacula:bacula@localhost:5432/bacula
+WITH data only, preserve index names
+CAST type INTEGER when unsigned to serial keep default keep notnull,
+     type BIGINT when unsigned to bigserial keep default keep notnull,
+     type INTEGER when unsigned to integer keep default keep notnull,
+     type TINYINT to integer keep default keep notnull,
+     type DATETIME to timestamp keep default keep notnull
+INCLUDING ONLY TABLE NAMES MATCHING 'Client'
